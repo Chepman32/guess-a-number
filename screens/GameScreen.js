@@ -76,7 +76,7 @@ const GameScreen = props => {
       Alert.alert("Don't lie!", 'You know that this is wrong...', [
         { text: 'Sorry!', style: 'cancel' }
       ]);
-      props.setRounds(rounds => rounds + 1)
+      props.setRounds(props.rounds + 1)
       console.log(props.rounds)
       return;
     }
