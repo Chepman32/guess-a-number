@@ -228,47 +228,47 @@ export const data = [
 {
     question: "How many bones are in the human brain?",
     answer: 29,
-    img: require("../assets/img/ shutterstock_305273708.jpg"),
+    img: require("../assets/img/shutterstock_305273708.jpg"),
   },
 {
     question: "How much longer do right-handers live than left-handers?",
     answer: 9,
-    img: require("../assets/img/ 1533166623155628832.jpg"),
+    img: require("../assets/img/1533166623155628832.jpeg"),
   },
 {
     question: "The average time it takes a person to fall asleep, in minutes?",
     answer: 7,
-    img: require("../assets/img/ a-man-sleeping_1308-18962.jpg"),
+    img: require("../assets/img/a-man-sleeping_1308-18962.jpg"),
   },
 {
     question: "The total weight of bacteria living in the human body, in kilograms?",
     answer: 2,
-    img: require("../assets/img/ 13p_bakterii_d_850.jpg"),
+    img: require("../assets/img/13p_bakterii_d_850.jpg"),
   },
 {
     question: " What percentage of calcium is contained in the teeth?",
     answer: 99,
-    img: require("../assets/img/ 4d733f5c4c1ebc3d47be026255320aed.jpg"),
+    img: require("../assets/img/4d733f5c4c1ebc3d47be026255320aed.jpg"),
   },
 {
     question: "How many times do fingernails grow faster than toenails?",
     answer: 4,
-    img: require("../assets/img/ 25f7f1d05d31b59a0cf2ee2704e55430.jpg"),
+    img: require("../assets/img/25f7f1d05d31b59a0cf2ee2704e55430.jpg"),
 },
   {
     question: "The height of the smallest person in the world, in centimeters?",
     answer: 55,
-    img: require("../assets/img/ 890_450_5ebb988291c3d.jpg"),
+    img: require("../assets/img/890.jpg"),
 },
   {
     question: " What percentage of the laundry detergent market does Tide occupy? ",
     answer: 70,
-    img: require("../assets/img/ orig.jpg"),
+    img: require("../assets/img/orig.jpg"),
 },
   {
     question: "How many burgers does McDonald's sell per second?",
     answer: 75,
-    img: require("../assets/img/ McDonalds.jpg"),
+    img: require("../assets/img/McDonalds.jpg"),
 },
   {
     question: "How long do city residents spend on average waiting for a green traffic light, in months?",
@@ -328,7 +328,7 @@ export const data = [
   {
     question: "How many seconds does it take for most people to appreciate the appearance of the opposite sex?",
     answer: 3,
-    img: require("../assets/img/065434.531309.5377.jpg"),
+    img: require("../assets/img/065.jpeg"),
 },
   {
     question: "How much does the ashes remain after the cremation of a person weigh, in kilograms?",

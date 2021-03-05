@@ -3,7 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
   Image,
   Dimensions,
   ScrollView,
@@ -18,7 +17,7 @@ const GameOverScreen = props => {
   return (
     <ScrollView>
       <View style={styles.screen}>
-        <TitleText>The Game is Over!</TitleText>
+        <TitleText>Yes, you did it!</TitleText>
         <View style={styles.imageContainer}>
           <Image
             source={props.img}

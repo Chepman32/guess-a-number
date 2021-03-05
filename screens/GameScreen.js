@@ -4,11 +4,9 @@ import {
   Text,
   StyleSheet,
   Alert,
-  FlatList,
   Dimensions
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { ScreenOrientation } from 'expo';
 
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
@@ -27,12 +25,6 @@ const generateRandomBetween = (min, max, exclude) => {
   }
 };
 
-const renderListItem = (listLength, itemData) => (
-  <View style={styles.listItem}>
-    <BodyText>#{listLength - itemData.index}</BodyText>
-    <BodyText>{itemData.item}</BodyText>
-  </View>
-);
 
 const GameScreen = props => {
   const initialGuess = generateRandomBetween(1, 100, props.userChoice);
@@ -97,7 +89,6 @@ const GameScreen = props => {
       ...curPastGuesses
     ]);
   };
-
   let listContainerStyle = styles.listContainer;
 
   if (availableDeviceWidth < 350) {

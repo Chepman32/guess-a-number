@@ -14,6 +14,7 @@ import Card from '../components/Card';
 import TitleText from '../components/TitleText';
 import MainButton from '../components/MainButton';
 import { data } from '../constants/data';
+import { Constants } from '../constants/constants';
 
 const StartGameScreen = props => {
   const [currentQuestion, setCurrentQuestion] = useState()
@@ -21,7 +22,6 @@ const StartGameScreen = props => {
   const [confirmed, setConfirmed] = useState(true);
   const [, setSelectedNumber] = useState(currentQuestion ? currentQuestion.answer : "");
   const [, setButtonWidth ] = useState(Dimensions.get('window').width / 4);
-
 
   const resetInputHandler = () => {
     setEnteredValue('');
@@ -89,7 +89,7 @@ const StartGameScreen = props => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 10,
+    paddingVertical: "40%",
     alignItems: 'center',
     justifyContent: "center"
   },
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
-    paddingHorizontal: 15
+    paddingHorizontal: Constants.MAX_WIDTH * 0.03,
   },
   // button: {
   //   width: Dimensions.get('window').width / 4

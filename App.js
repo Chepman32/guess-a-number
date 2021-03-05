@@ -39,6 +39,7 @@ export default function App() {
   };
 
   const startGameHandler = selectedNumber => {
+    setRounds(0)
     setUserNumber(selectedNumber);
   };
 
