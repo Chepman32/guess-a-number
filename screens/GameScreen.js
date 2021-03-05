@@ -13,6 +13,7 @@ import Card from '../components/Card';
 import BodyText from '../components/BodyText';
 import DefaultStyles from '../constants/default-styles';
 import MainButton from '../components/MainButton.android';
+import { IMLocalized } from '../Localization';
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -65,7 +66,7 @@ const GameScreen = props => {
       (direction === 'lower' && currentGuess < props.userChoice) ||
       (direction === 'greater' && currentGuess > props.userChoice)
     ) {
-      Alert.alert("Don't lie!", 'You know that this is wrong...', [
+      Alert.alert(IMLocalized("Don't lie!"), IMLocalized('You know that this is wrong...'), [
         { text: 'Sorry!', style: 'cancel' }
       ]);
       props.setRounds(props.rounds + 1)

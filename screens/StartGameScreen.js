@@ -15,8 +15,10 @@ import TitleText from '../components/TitleText';
 import MainButton from '../components/MainButton';
 import { data } from '../constants/data';
 import { Constants } from '../constants/constants';
+import { IMLocalized, init } from '../Localization';
 
 const StartGameScreen = props => {
+  init()
   const [currentQuestion, setCurrentQuestion] = useState()
   const [enteredValue, setEnteredValue] = useState(currentQuestion ? currentQuestion.answer : "");
   const [confirmed, setConfirmed] = useState(true);
@@ -54,7 +56,9 @@ const StartGameScreen = props => {
       <Card style={styles.summaryContainer}>
 
         <MainButton onPress={() => props.onStartGame(currentQuestion ? currentQuestion.answer : "")}>
-          START GAME
+          {
+            IMLocalized("START GAME")
+          }
         </MainButton>
       </Card>
     );

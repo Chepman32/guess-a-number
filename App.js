@@ -14,7 +14,6 @@ const fetchFonts = () => {
     'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf')
   });
 };
-
 export default function App() {
   const [userNumber, setUserNumber] = useState();
   const [text, setText] = useState("")

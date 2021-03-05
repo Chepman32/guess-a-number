@@ -12,12 +12,14 @@ import BodyText from '../components/BodyText';
 import TitleText from '../components/TitleText';
 import MainButton from '../components/MainButton';
 import Colors from '../constants/colors';
+import { IMLocalized, init } from '../Localization';
 
 const GameOverScreen = props => {
+  init()
   return (
     <ScrollView>
       <View style={styles.screen}>
-        <TitleText>Yes, you did it!</TitleText>
+        <TitleText>{IMLocalized("Yes, you did it!")} </TitleText>
         <View style={styles.imageContainer}>
           <Image
             source={props.img}
@@ -28,9 +30,8 @@ const GameOverScreen = props => {
         </View>
         <View style={styles.resultContainer}>
           <BodyText style={styles.resultText}>
-            You needed{' '}
-            <Text style={styles.highlight}>{props.roundsNumber}</Text> mistakes to
-            guess the number{' '}
+            {IMLocalized("You needed")} {' '}
+            <Text style={styles.highlight}>{props.roundsNumber}</Text> {IMLocalized("mistakes to guess the number")} {' '}
             <Text style={styles.highlight}>{props.userNumber}</Text>.
           </BodyText>
         </View>
