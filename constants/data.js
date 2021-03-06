@@ -99,7 +99,7 @@ export const data = [
     answer: 27,
     img: require("../assets/img/20.jpg"),
   },
-  
+
   {
     question: "How many micrograms of caffeine in an athlete's blood is enough to be disqualified in the Olympics Games?",
     answer: 12,
@@ -231,7 +231,7 @@ export const data = [
     img: require("../assets/img/shutterstock_305273708.jpg"),
   },
 {
-    question: "How much longer do right-handers live than left-handers?",
+    question: "How many percent of righties live longer than lefties?",
     answer: 9,
     img: require("../assets/img/1533166623155628832.jpeg"),
   },
@@ -261,29 +261,14 @@ export const data = [
     img: require("../assets/img/890.jpg"),
 },
   {
-    question: " What percentage of the laundry detergent market does Tide occupy? ",
+    question: "What percentage of the laundry detergent market does Tide occupy?",
     answer: 70,
     img: require("../assets/img/orig.jpg"),
-},
-  {
-    question: "How many burgers does McDonald's sell per second?",
-    answer: 75,
-    img: require("../assets/img/McDonalds.jpg"),
-},
-  {
-    question: "How long do city residents spend on average waiting for a green traffic light, in months?",
-    answer: 6,
-    img: require("../assets/img/17829883_403.jpg"),
 },
   {
     question: "How many percent of men are ready to do only household chores if their wives can provide for the whole family?",
     answer: 73,
     img: require("../assets/img/Men-can-do.jpg"),
-},
-  {
-    question: "How many monkeys have ever flown into space?",
-    answer: 32,
-    img: require("../assets/img/aa9edd715909782fcb.jpg"),
 },
   {
     question: "How many people can die from the poison of one puffer fish?",
@@ -301,29 +286,14 @@ export const data = [
     img: require("../assets/img/1561060116_0_318_3076_2048_600x0_80.jpg"),
 },
   {
-    question: "Number of children born to one woman?",
+    question: "Max number of children born to one woman?",
     answer: 69,
     img: require("../assets/img/88517f.jpg"),
 },
   {
-    question: "How many times for the whole life can you go around the Earth?",
+    question: "How many times in a lifetime can a person walk around the Earth?",
     answer: 5,
     img: require("../assets/img/1200px-NASA_Earth_America_2002.jpg"),
-},
-  {
-    question: "How many hours a day do people in the United States watch TV?",
-    answer: 4,
-    img: require("../assets/img/941856232_0_0_2001_1126_600x0_80.jpg"),
-},
-  {
-    question: "How many percent of women do not want to take their husband's surname?",
-    answer: 51,
-    img: require("../assets/img/gagarinskij-zags-11.jpg"),
-},
-  {
-    question: "How many centimeters is the length of the giraffe's tongue?",
-    answer: 45,
-    img: require("../assets/img/1598100850154130525.jpg"),
 },
   {
     question: "How many seconds does it take for most people to appreciate the appearance of the opposite sex?",
@@ -335,26 +305,6 @@ export const data = [
     answer: 4,
     img: require("../assets/img/krym_krematoriy_kremaciya.jpg"),
 },
-  {
-    question: "What percentage of women are attracted to socially active men?",
-    answer: 75,
-    img: require("../assets/img/IMG_0533-400x300.jpg"),
-},
-  {
-    question: "How many times has the population of the Earth increased in a thousand years?",
-    answer: 22,
-    img: require("../assets/img/729_486_560d79ff323e41-640x427.jpg"),
-},
-  {
-    question: "What is the length of a track dvd disc, in kilometers?",
-    answer: 12,
-    img: require("../assets/img/irwxvfh8oxutofhjnshgleabhqs.jpg"),
-},
-  {
-    question: "How many percent of women prefer to fix their bad mood with fast food?",
-    answer: 26,
-    img: require("../assets/img/depositphotos_11295354-stock-photo-woman-eating-fast-food.jpg"),
-  },
 {
     question: "Percentage of dreams that a person forgets?",
     answer: 98,
@@ -364,11 +314,6 @@ export const data = [
     question: "How many percent of healthcare professionals admit they commit many medical errors due to fatigue?",
     answer: 42,
     img: require("../assets/img/20190823_hirurg4.jpg"),
-  },
-{
-    question: "How many micrograms of caffeine is enough for an Olympic disqualification?",
-    answer:12,
-    img: require("../assets/img/unnamed.jpg"),
   },
 {
     question: "How many percent of the world's energy is spent on storing and transmitting data on the Internet?",
@@ -391,11 +336,6 @@ export const data = [
     img: require("../assets/img/1474108029_0_0_4864_3648_1920x0_80_0_0.jpg"),
 },
 {
-    question: "How many times a day do people laugh on average?",
-    answer: 15,
-    img: require("../assets/img/1474108029_0_0_4864_3648_1920x0_80_0_0.jpg"),
-},
-{
     question: "The length of the human small intestine? In meters",
     answer: 3,
     img: require("../assets/img/f402af4d3c2d71d295f933bc58725d9c.jpg"),
@@ -406,29 +346,14 @@ export const data = [
     img: require("../assets/img/aed4b4192d05492784cce0a27fa0ce66.max-2000x1000.jpg"),
 },
 {
-    question: "How much air is contained in a pack of Lays chips? In percents",
-    answer: 41,
-    img: require("../assets/img/f402af4d3c2d71d295f933bc58725d9c.jpg"),
-},
-{
     question: "How many millimeters is a person taller in the morning than in the evening?",
     answer: 8,
     img: require("../assets/img/d6b805ca7b3290abd0582d77312bbc564ec.jpg"),
 },
 {
-    question: "How many tons of food does a person consume on average in his life?",
-    answer: 27,
-    img: require("../assets/img/ночное-обжорство-фото.jpg"),
-},
-{
     question: "How many times is bone stronger than steel?",
     answer: 5,
     img: require("../assets/img/maxresdefault.jpg"),
-},
-{
-    question: "How many minutes does it take for a person to fall asleep?",
-    answer: 7,
-    img: require("../assets/img/fullsize30.jpg"),
 },
 {
     question: "How many small spiders do the average person swallow in their entire life?",
@@ -451,11 +376,6 @@ export const data = [
     img: require("../assets/img/875.jpg"),
 },
 {
-    question: "How many years did a person search without a break?",
-    answer: 68,
-    img: require("../assets/img/shutterstock_1145290154.jpg"),
-},
-{
     question: "How many times less often do women blink than men?",
     answer: 2,
     img: require("../assets/img/c3c3fffef4caa4df32a1b5b922f85c64.jpg"),
@@ -466,7 +386,7 @@ export const data = [
     img: require("../assets/img/depositphotos_5349761-stock-photo-.jpg"),
 },
 {
-    question: "How many percent of the world's population are inhabitants of the predominantly arid part of the planet?",
+    question: "“How many percent of the world's population are residents of the arid part of the planet?",
     answer: 85,
     img: require("../assets/img/drought-lesothowwwww-1024x683.jpg"),
 },

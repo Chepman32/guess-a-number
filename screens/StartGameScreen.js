@@ -31,7 +31,7 @@ const StartGameScreen = props => {
   };
 
   useEffect(() => {
-    props.setText(currentQuestion ? currentQuestion.question : "")
+    props.setText(currentQuestion ? IMLocalized(currentQuestion.question) : "")
     props.setImg(currentQuestion ? currentQuestion.img : "")
     const updateLayout = () => {
       setButtonWidth(Dimensions.get('window').width / 4);

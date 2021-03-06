@@ -36,7 +36,7 @@ const GameOverScreen = props => {
           </BodyText>
         </View>
 
-        <MainButton onPress={props.onRestart}>NEW GAME</MainButton>
+        <MainButton onPress={props.onRestart}>{IMLocalized("NEW GAME")} </MainButton>
       </View>
     </ScrollView>
   );
