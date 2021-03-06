@@ -16,6 +16,19 @@ import { IMLocalized, init } from '../Localization';
 
 const GameOverScreen = props => {
   init()
+  function convertRes(num) {
+    switch(num.toString()) {
+      case num.length === 2 && num[0] === "1": {
+        return "ошибок"
+      }
+      case num.length === 1: {
+        return "ошибки"
+      }
+      default: {
+        return "ошибок"
+      }
+    }
+  }
   return (
     <ScrollView>
       <View style={styles.screen}>

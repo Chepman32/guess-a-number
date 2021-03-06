@@ -80,7 +80,7 @@ const StartGameScreen = props => {
           }}
         >
           <View style={styles.screen}>
-            <TitleText style={styles.title}>Start a New Game!</TitleText>
+            <TitleText style={styles.title}>{IMLocalized("Start a New Game!")} </TitleText>
 
             {confirmedOutput}
           </View>

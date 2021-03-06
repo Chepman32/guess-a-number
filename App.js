@@ -7,6 +7,7 @@ import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
 import AppLoading from 'expo-app-loading';
+import { IMLocalized } from './Localization';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -68,7 +69,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.screen}>
-      <Header title="Guess a Number" />
+      <Header title={IMLocalized("Guess a Number")} />
       {content}
     </SafeAreaView>
   );

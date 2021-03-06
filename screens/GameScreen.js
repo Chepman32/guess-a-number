@@ -99,7 +99,7 @@ const GameScreen = props => {
   if (availableDeviceHeight < 500) {
     return (
       <View style={styles.screen}>
-        <Text style={DefaultStyles.title}>Your Guess</Text>
+        <Text style={DefaultStyles.title}>{IMLocalized("Your Guess")} </Text>
         <View style={styles.controls}>
           <MainButton onPress={nextGuessHandler.bind(this, 'lower')}>
             <Ionicons name="md-remove" size={24} color="white" />
@@ -118,7 +118,7 @@ const GameScreen = props => {
 
   return (
     <View style={styles.screen}>
-      <Text style={DefaultStyles.title}>Your Guess</Text>
+      <Text style={DefaultStyles.title}>{IMLocalized("Your Guess")} </Text>
       <NumberContainer>{currentGuess}</NumberContainer>
       <Card style={styles.buttonContainer}>
         <MainButton onPress={nextGuessHandler.bind(this, 'lower')}>
