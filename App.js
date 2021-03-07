@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Text, StatusBar } from 'react-native';
 import * as Font from 'expo-font';
 
 import Header from './components/Header';
@@ -71,6 +71,7 @@ export default function App() {
     <SafeAreaView style={styles.screen}>
       <Header title={IMLocalized("Guess a Number")} />
       {content}
+      <StatusBar hidden={true}/>
     </SafeAreaView>
   );
 }

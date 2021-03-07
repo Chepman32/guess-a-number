@@ -5,6 +5,10 @@ import { I18nManager } from 'react-native';
 export const translationGetters = {
     'en-US': () => require('./constants/en.json'),
     'ru-RU': () => require('./constants/ru.json'),
+    "fr-FR": () => require("./constants/fr.json"),
+    "es-US": () => require("./constants/es.json"),
+    "de-DE": () => require("./constants/de.json"),
+    "ch-CM": () => require("./constants/ch.json")
   };
   export const IMLocalized = memoize(
     (key, config) =>

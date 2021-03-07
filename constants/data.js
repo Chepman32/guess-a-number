@@ -7,7 +7,7 @@ export const data = [
   {
     question: "The only even prime number",
     answer: 2,
-    img: require("../assets/img/4-1.jpg"),
+    img: require("../assets/img/2.jpg"),
   },
   {
     question: "What is the only one number spelled with the same number of letters as itself?",
@@ -37,7 +37,7 @@ export const data = [
   {
     question: "Average lifetime in the 19th century",
     answer: 19,
-    img: require("../assets/img/18.5.jpg"),
+    img: require("../assets/img/19.jpg"),
   },
   {
     question: "Share of female employees in Facebook, in percent",
@@ -87,7 +87,7 @@ export const data = [
   {
     question: "How many million times a year a person blinks on average?",
     answer: 6,
-    img: require("../assets/img/6.jpg"),
+    img: require("../assets/img/6-2.jpg"),
   },
   {
     question: "How many times a people sense of smell is weaker than a dog's sense of smell?",
@@ -97,7 +97,7 @@ export const data = [
   {
     question: "How many tons of food a people consumes during a lifetime?",
     answer: 27,
-    img: require("../assets/img/20.jpg"),
+    img: require("../assets/img/27.jpg"),
   },
 
   {
@@ -223,17 +223,17 @@ export const data = [
   {
     question: "How many years do we spend in bed in our entire life?",
     answer: 33,
-    img: require("../assets/img/depositphotos_218670186.jpg"),
+    img: require("../assets/img/33.jpg"),
   },
 {
     question: "How many bones are in the human brain?",
     answer: 29,
-    img: require("../assets/img/shutterstock_305273708.jpg"),
+    img: require("../assets/img/29-1.jpg"),
   },
 {
     question: "How many percent of righties live longer than lefties?",
     answer: 9,
-    img: require("../assets/img/1533166623155628832.jpeg"),
+    img: require("../assets/img/9-1.jpeg"),
   },
 {
     question: "The average time it takes a person to fall asleep, in minutes?",
@@ -317,13 +317,13 @@ export const data = [
   },
 {
     question: "How many percent of the world's energy is spent on storing and transmitting data on the Internet?",
-    answer: 20,
+    answer: 2,
     img: require("../assets/img/37232871029о.jpg"),
 },
 {
     question: "How many hours a day does the average user spend on the Internet?",
     answer: 7,
-    img: require("../assets/img/интернет-значение-в-жизни-человека.jpg"),
+    img: require("../assets/img/7.jpg"),
 },
 {
     question: "The height of a newborn giraffe? In meters",
