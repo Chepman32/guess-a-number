@@ -151,7 +151,7 @@ export const data = [
     img: require("../assets/img/13.jpg"),
   },
   {
-    question: "How many centimeters is the length of the giraffe's tongue?",
+    question: "What the length of the giraffe's tongue, in centimeters?",
     answer: 45,
     img: require("../assets/img/45.jpg"),
   },

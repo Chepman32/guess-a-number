@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "guess-a-number",
+    "name": "Guess a number",
     "slug": "guess-a-number",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,12 +17,24 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.guessanumberquiz",
+      "supportsTablet": true,
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-2840764267461073~8238338043"
+      }
     },
     "android": {
+      "package": "com.guessanumberquiz",
+      "versionCode": 2,
+      "permissions": [
+        "WRITE_EXTERNAL_STORAGE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-2840764267461073~7308399753"
       }
     },
     "web": {
