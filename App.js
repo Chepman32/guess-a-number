@@ -7,7 +7,7 @@ import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
 import AppLoading from 'expo-app-loading';
-import { IMLocalized } from './Localization';
+import { IMLocalized, init } from './Localization';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -22,7 +22,7 @@ export default function App() {
   const [rounds, setRounds] = useState(0)
   const [img, setImg] = useState()
   const [dataLoaded, setDataLoaded] = useState(false);
-
+  init()
   if (!dataLoaded) {
     return (
       <AppLoading

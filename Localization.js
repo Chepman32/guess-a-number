@@ -29,7 +29,9 @@ export const translationGetters = {
 };
   export const init = async () => {
     const stored = await readData()
-      
+    i18n.fallbacks = true;
+    i18n.defaultLocale = 'en';
+    i18n.locale = 'en';
     let localeLanguageTag = stored !== null ? stored : Localization.locale;
     let isRTL = Localization.isRTL;
     IMLocalized.cache.clear();
