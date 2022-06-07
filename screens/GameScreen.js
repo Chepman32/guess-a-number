@@ -10,10 +10,10 @@ import { Ionicons } from '@expo/vector-icons';
 
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
-import BodyText from '../components/BodyText';
 import DefaultStyles from '../constants/default-styles';
 import MainButton from '../components/MainButton.android';
 import { IMLocalized } from '../Localization';
+import { Warning } from "./Warning"
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -37,6 +37,7 @@ const GameScreen = props => {
   const [availableDeviceHeight, setAvailableDeviceHeight] = useState(
     Dimensions.get('window').height
   );
+  const [end, setEnd] = useState(false)
   const currentLow = useRef(1);
   const currentHigh = useRef(100);
 
@@ -66,11 +67,8 @@ const GameScreen = props => {
       (direction === 'lower' && currentGuess < props.userChoice) ||
       (direction === 'greater' && currentGuess > props.userChoice)
     ) {
-      Alert.alert(IMLocalized("Don't lie!"), IMLocalized('You know that this is wrong...'), [
-        { text: 'Sorry!', style: 'cancel' }
-      ]);
+      setEnd(true);
       props.setRounds(props.rounds + 1)
-      console.log(props.rounds)
       return;
     }
     if (direction === 'lower') {
@@ -128,7 +126,12 @@ const GameScreen = props => {
           <Ionicons name="md-add" size={24} color="white" />
         </MainButton>
       </Card>
-      <Text style={styles.text} >{props.text}</Text>
+      <Text style={styles.text} >{IMLocalized(props.text)}</Text>
+      {
+        end && <Warning text={'You know that this is wrong...'} handler={() => {
+          setEnd(false)
+        }} />
+      }
     </View>
   );
 };

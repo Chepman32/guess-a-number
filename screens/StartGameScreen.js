@@ -4,10 +4,11 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   Keyboard,
-  Alert,
+  Image,
   Dimensions,
   ScrollView,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
+  TouchableOpacity
 } from 'react-native';
 
 import Card from '../components/Card';
@@ -16,13 +17,14 @@ import MainButton from '../components/MainButton';
 import { data } from '../constants/data';
 import { Constants } from '../constants/constants';
 import { IMLocalized, init } from '../Localization';
+import { Settings } from '../Settings';
 
 const StartGameScreen = props => {
   init()
   const [currentQuestion, setCurrentQuestion] = useState()
+  const [options, setOptions] = useState(false)
   const [enteredValue, setEnteredValue] = useState(currentQuestion ? currentQuestion.answer : "");
   const [confirmed, setConfirmed] = useState(true);
-  const [, setSelectedNumber] = useState(currentQuestion ? currentQuestion.answer : "");
   const [, setButtonWidth ] = useState(Dimensions.get('window').width / 4);
 
   const resetInputHandler = () => {
@@ -48,6 +50,9 @@ const StartGameScreen = props => {
     props.onStartGame(currentQuestion ? currentQuestion.answer : "")
   }, [])
 
+  useEffect(()=> {
+    init()
+  })
 
   let confirmedOutput;
 
@@ -71,7 +76,10 @@ const StartGameScreen = props => {
     return rndNum
   }
 
-  return (
+  return options
+  ?
+  <Settings hide={() => setOptions(false)} />
+  : (
     <ScrollView>
       <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={30}>
         <TouchableWithoutFeedback
@@ -86,6 +94,9 @@ const StartGameScreen = props => {
           </View>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
+      <TouchableOpacity onPress={() => setOptions(true)} style={styles.settings} >
+      <Image source={require("../assets/settings-icon.png")} style={styles.settingsIcon}/>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -125,6 +136,15 @@ const styles = StyleSheet.create({
   summaryContainer: {
     marginTop: 20,
     alignItems: 'center'
+  },
+  settings: {
+    position: "absolute",
+    top: "3%",
+    right: "5%",
+  },
+  settingsIcon: {
+    width: 64,
+    height: 64,
   }
 });
 

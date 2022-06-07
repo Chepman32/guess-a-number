@@ -1,5 +1,6 @@
 import memoize from 'lodash.memoize'; // Use for caching/memoize for better performance
 import i18n from 'i18n-js';
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import * as Localization from 'expo-localization';
 import { I18nManager } from 'react-native';
 export const translationGetters = {
@@ -15,9 +16,21 @@ export const translationGetters = {
       i18n.t(key, config).includes('missing') ? key : i18n.t(key, config),
     (key, config) => (config ? key + JSON.stringify(config) : key),
   );
-  export const init = () => {
+  const readData = async () => {
+    try {
+    const value = await AsyncStorage.getItem("ACTIVE_LANGUAGE");
+    if(value !== null) {
+      return value
+    }
+    }
+    catch (e) {
+    alert('Failed to fetch the settings from storage');
+    }
+};
+  export const init = async () => {
+    const stored = await readData()
       
-    let localeLanguageTag = Localization.locale;
+    let localeLanguageTag = stored !== null ? stored : Localization.locale;
     let isRTL = Localization.isRTL;
     IMLocalized.cache.clear();
     // update layout direction
