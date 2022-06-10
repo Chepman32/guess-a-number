@@ -3,7 +3,8 @@ import {
   View,
   Text,
   StyleSheet,
-  Alert,
+  TouchableOpacity,
+  Image,
   Dimensions
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -127,6 +128,9 @@ const GameScreen = props => {
         </MainButton>
       </Card>
       <Text style={styles.text} >{IMLocalized(props.text)}</Text>
+      <TouchableOpacity onPress={props.back} style={styles.home} >
+        <Image source={require("../assets/icons/home.png")} style={styles.homeIcon}/>
+      </TouchableOpacity>
       {
         end && <Warning text={'You know that this is wrong...'} handler={() => {
           setEnd(false)
@@ -181,7 +185,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%'
-  }
+  },
+  home: {
+    position: "absolute",
+    top: "3%",
+    left: "5%",
+  },
+  homeIcon: {
+    width: 44,
+    height: 44,
+  },
 });
 
 export default GameScreen;

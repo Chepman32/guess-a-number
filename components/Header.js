@@ -1,10 +1,14 @@
-import React from 'react';
-import { View, Text, StyleSheet, Platform } from 'react-native';
+import React, { useEffect, useMemo } from 'react';
+import { View, StyleSheet, Platform } from 'react-native';
 
 import TitleText from './TitleText';
 import Colors from '../constants/colors';
+import { IMLocalized, init } from '../Localization';
 
 const Header = props => {
+  useEffect(() => {
+    init()
+  }, [])
   return (
     <View
       style={{
@@ -15,7 +19,7 @@ const Header = props => {
         })
       }}
     >
-      <TitleText style={styles.title}>{props.title}</TitleText>
+      <TitleText style={styles.title}>{useMemo(() => IMLocalized(props.title))}</TitleText>
     </View>
   );
 };

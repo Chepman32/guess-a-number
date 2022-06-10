@@ -33,7 +33,7 @@ export const Settings = ({hide}) => {
     };
 
     return (
-        <ScrollView bounces={false} style={{flexDirection: "row"}} >
+        <ScrollView style={{flexDirection: "row"}} >
             <TouchableOpacity onPress={hide} style={styles.back}>
             <Image source={require("./assets/icons/back.png")} style={styles.backIcon} />
             </TouchableOpacity>

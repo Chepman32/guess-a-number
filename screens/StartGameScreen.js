@@ -80,7 +80,7 @@ const StartGameScreen = props => {
   ?
   <Settings hide={() => setOptions(false)} />
   : (
-    <ScrollView>
+    <View>
       <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={30}>
         <TouchableWithoutFeedback
           onPress={() => {
@@ -97,7 +97,7 @@ const StartGameScreen = props => {
       <TouchableOpacity onPress={() => setOptions(true)} style={styles.settings} >
       <Image source={require("../assets/settings-icon.png")} style={styles.settingsIcon}/>
       </TouchableOpacity>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -140,7 +140,7 @@ const styles = StyleSheet.create({
   settings: {
     position: "absolute",
     top: "3%",
-    right: "5%",
+    left: "5%",
   },
   settingsIcon: {
     width: 64,

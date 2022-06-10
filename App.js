@@ -54,7 +54,10 @@ export default function App() {
   if (userNumber && guessRounds <= 0) {
     content = (
       <GameScreen userChoice={userNumber} onGameOver={gameOverHandler} text={text}
-       rounds={rounds} setRounds={(value) => setRounds(value)} />
+       rounds={rounds} setRounds={(value) => setRounds(value)} back={() => {
+         setUserNumber(0)
+         setGuessRounds(false)
+       }} />
     );
   } else if (guessRounds > 0) {
     content = (
@@ -69,7 +72,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.screen}>
-      <Header title={IMLocalized("Guess a Number")} />
+      <Header title={"Guess a Number"} />
       {content}
       <StatusBar hidden={true}/>
     </SafeAreaView>
