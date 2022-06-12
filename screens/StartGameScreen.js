@@ -27,11 +27,6 @@ const StartGameScreen = props => {
   const [confirmed, setConfirmed] = useState(true);
   const [, setButtonWidth ] = useState(Dimensions.get('window').width / 4);
 
-  const resetInputHandler = () => {
-    setEnteredValue('');
-    setConfirmed(false);
-  };
-
   useEffect(() => {
     props.setText(currentQuestion ? IMLocalized(currentQuestion.question) : "")
     props.setImg(currentQuestion ? currentQuestion.img : "")
@@ -80,7 +75,8 @@ const StartGameScreen = props => {
   ?
   <Settings hide={() => setOptions(false)} />
   : (
-    <View>
+    <ScrollView bounces={false} >
+      <View>
       <KeyboardAvoidingView behavior="position" keyboardVerticalOffset={30}>
         <TouchableWithoutFeedback
           onPress={() => {
@@ -98,6 +94,7 @@ const StartGameScreen = props => {
       <Image source={require("../assets/settings-icon.png")} style={styles.settingsIcon}/>
       </TouchableOpacity>
     </View>
+    </ScrollView>
   );
 };
 

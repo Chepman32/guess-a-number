@@ -6,7 +6,7 @@ import { Constants } from '../constants/constants';
 
 const MainButton = props => {
   return (
-    <TouchableOpacity activeOpacity={0.6} onPress={props.onPress}>
+    <TouchableOpacity activeOpacity={0.9} onPress={props.onPress}>
       <View style={styles.button}>
         <Text style={styles.buttonText}>{props.children}</Text>
       </View>

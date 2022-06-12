@@ -8,6 +8,8 @@ import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
 import AppLoading from 'expo-app-loading';
 import { IMLocalized, init } from './Localization';
+import SplashScreen from './components/SplashScreen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -47,9 +49,11 @@ export default function App() {
     setGuessRounds(numOfRounds);
   };
 
-  let content = <StartGameScreen onStartGame={startGameHandler} 
+  let content = <SafeAreaProvider>
+    <SplashScreen onStartGame={startGameHandler} 
   setText={(value) => setText(value)}
   setImg={(value) => setImg(value)} />
+  </SafeAreaProvider>
 
   if (userNumber && guessRounds <= 0) {
     content = (

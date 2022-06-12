@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import {
   View,
   Text,
@@ -14,7 +14,7 @@ import Card from '../components/Card';
 import DefaultStyles from '../constants/default-styles';
 import MainButton from '../components/MainButton.android';
 import { IMLocalized } from '../Localization';
-import { Warning } from "./Warning"
+import { Warning } from "../components/Warning"
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -62,6 +62,9 @@ const GameScreen = props => {
       onGameOver(pastGuesses.length);
     }
   }, [currentGuess, userChoice, onGameOver]);
+  const error = useMemo(() => {
+    return IMLocalized("You know that this is wrong...")
+  })
 
   const nextGuessHandler = direction => {
     if (
@@ -132,7 +135,7 @@ const GameScreen = props => {
         <Image source={require("../assets/icons/home.png")} style={styles.homeIcon}/>
       </TouchableOpacity>
       {
-        end && <Warning text={'You know that this is wrong...'} handler={() => {
+        end && <Warning text={error} handler={() => {
           setEnd(false)
         }} />
       }
@@ -175,16 +178,6 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     // alignItems: 'center',
     justifyContent: 'flex-end'
-  },
-  listItem: {
-    borderColor: '#ccc',
-    borderWidth: 1,
-    padding: 15,
-    marginVertical: 10,
-    backgroundColor: 'white',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: '100%'
   },
   home: {
     position: "absolute",

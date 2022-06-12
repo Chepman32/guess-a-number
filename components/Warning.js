@@ -1,10 +1,14 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { View, Image, TouchableOpacity, Text, StyleSheet } from "react-native"
 import Modal from "react-native-modal";
 import { Constants } from "../constants/constants"
 import { IMLocalized, init } from "../Localization"
 
 export const Warning = ({ text, handler }) => {
+    init()
+    useEffect(() => {
+        init()
+    })
     init()
     return (
         <Modal isVisible={true} onBackdropPress={handler} >
@@ -13,7 +17,7 @@ export const Warning = ({ text, handler }) => {
             <Image source={require("../assets/icons/warning.png")} style={styles.icon}/>
             </View>
             <View style={styles.bottom}>
-            <Text style={styles.text}>{IMLocalized(text)} </Text>
+            <Text style={styles.text}>{IMLocalized("You know that this is wrong")} </Text>
             <TouchableOpacity onPress={handler} style={styles.button} >
                 <Text style={styles.buttonText} >OK</Text>
             </TouchableOpacity>
