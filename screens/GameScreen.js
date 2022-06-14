@@ -8,6 +8,7 @@ import {
   Dimensions
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
@@ -15,6 +16,7 @@ import DefaultStyles from '../constants/default-styles';
 import MainButton from '../components/MainButton.android';
 import { IMLocalized } from '../Localization';
 import { Warning } from "../components/Warning"
+import { Constants } from '../constants/constants';
 
 const generateRandomBetween = (min, max, exclude) => {
   min = Math.ceil(min);
@@ -63,7 +65,7 @@ const GameScreen = props => {
     }
   }, [currentGuess, userChoice, onGameOver]);
   const error = useMemo(() => {
-    return IMLocalized("You know that this is wrong...")
+    return IMLocalized("You know that this is wrong")
   })
 
   const nextGuessHandler = direction => {
@@ -71,12 +73,15 @@ const GameScreen = props => {
       (direction === 'lower' && currentGuess < props.userChoice) ||
       (direction === 'greater' && currentGuess > props.userChoice)
     ) {
+      ReactNativeHapticFeedback.trigger("notificationSuccess", Constants.hapticOptions);
       setEnd(true);
+      ReactNativeHapticFeedback.trigger("notificationError", Constants.hapticOptions);
       props.setRounds(props.rounds + 1)
       return;
     }
     if (direction === 'lower') {
       currentHigh.current = currentGuess;
+      ReactNativeHapticFeedback.trigger("impactLight", Constants.hapticOptions);
     } else {
       currentLow.current = currentGuess + 1;
     }

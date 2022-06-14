@@ -3,11 +3,10 @@ import { StyleSheet, View, SafeAreaView, Text, StatusBar } from 'react-native';
 import * as Font from 'expo-font';
 
 import Header from './components/Header';
-import StartGameScreen from './screens/StartGameScreen';
 import GameScreen from './screens/GameScreen';
 import GameOverScreen from './screens/GameOverScreen';
 import AppLoading from 'expo-app-loading';
-import { IMLocalized, init } from './Localization';
+import { init } from './Localization';
 import SplashScreen from './components/SplashScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 

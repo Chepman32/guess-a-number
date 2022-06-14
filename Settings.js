@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { ScrollView, View, TouchableOpacity, Text, Image, StyleSheet } from "react-native"
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 import { Constants } from "./constants/constants"
 import { LanguageItem } from "./LanguageItem"
 import { init } from "./Localization"
@@ -33,11 +34,74 @@ export const Settings = ({hide}) => {
     };
 
     return (
-        <ScrollView style={{flexDirection: "row"}} >
-            <TouchableOpacity onPress={hide} style={styles.back}>
-            <Image source={require("./assets/icons/back.png")} style={styles.backIcon} />
-            </TouchableOpacity>
+        <ScrollView>
             <View style={styles.container}>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("impactLight", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>impactLight</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("impactMedium", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>impactMedium</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("impactHeavy", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>impactHeavy</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("rigid", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>rigid</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("soft", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>soft</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("notificationSuccess", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>notificationSuccess</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("notificationWarning", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>notificationWarning</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("notificationError", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>notificationError</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("selection", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>selection</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("clockTick", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>clockTick</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("contextClick", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>contextClick</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("keyboardPress", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>keyboardPress</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("keyboardRelease", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>keyboardRelease</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("keyboardTap", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>keyboardTap</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("longPress", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>longPress</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("textHandleMove", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>textHandleMove</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("virtualKey", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>virtualKey</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("virtualKeyRelease", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>virtualKeyRelease</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("effectClick", Constants.hapticOptions)} style={{marginTop: 50}} >
+                    <Text>effectClick</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("effectDoubleClick", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>effectDoubleClick</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("effectHeavyClick", Constants.hapticOptions)} style={{marginTop: 20}} >
+                    <Text>effectHeavyClick</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={() => ReactNativeHapticFeedback.trigger("effectTick", Constants.hapticOptions)} >
+                    <Text>effectTick</Text>
+                </TouchableOpacity>
             <LanguageItem icon={require("./assets/icons/ru.png")} name={"RU"} active={lang === "ru-RU"} handler={() => {
                 saveData("ru-RU")
                 saveData("ru-RU")
@@ -76,7 +140,7 @@ export const Settings = ({hide}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
     },
     back: {
