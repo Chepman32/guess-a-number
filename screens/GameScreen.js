@@ -51,9 +51,7 @@ const GameScreen = props => {
       setAvailableDeviceWidth(Dimensions.get('window').width);
       setAvailableDeviceHeight(Dimensions.get('window').height);
     };
-
     Dimensions.addEventListener('change', updateLayout);
-
     return () => {
       Dimensions.removeEventListener('change', updateLayout);
     };
@@ -62,8 +60,13 @@ const GameScreen = props => {
   useEffect(() => {
     if (currentGuess === userChoice) {
       onGameOver(pastGuesses.length);
+      ReactNativeHapticFeedback.trigger("notificationSuccess", Constants.hapticOptions);
     }
   }, [currentGuess, userChoice, onGameOver]);
+
+  useEffect(() => {
+    ReactNativeHapticFeedback.trigger("impactLight", Constants.hapticOptions);
+  })
   const error = useMemo(() => {
     return IMLocalized("You know that this is wrong")
   })
@@ -73,7 +76,6 @@ const GameScreen = props => {
       (direction === 'lower' && currentGuess < props.userChoice) ||
       (direction === 'greater' && currentGuess > props.userChoice)
     ) {
-      ReactNativeHapticFeedback.trigger("notificationSuccess", Constants.hapticOptions);
       setEnd(true);
       ReactNativeHapticFeedback.trigger("notificationError", Constants.hapticOptions);
       props.setRounds(props.rounds + 1)
@@ -81,7 +83,6 @@ const GameScreen = props => {
     }
     if (direction === 'lower') {
       currentHigh.current = currentGuess;
-      ReactNativeHapticFeedback.trigger("impactLight", Constants.hapticOptions);
     } else {
       currentLow.current = currentGuess + 1;
     }

@@ -23,7 +23,6 @@ const StartGameScreen = props => {
   init()
   const [currentQuestion, setCurrentQuestion] = useState()
   const [options, setOptions] = useState(false)
-  const [enteredValue, setEnteredValue] = useState(currentQuestion ? currentQuestion.answer : "");
   const [confirmed, setConfirmed] = useState(true);
   const [, setButtonWidth ] = useState(Dimensions.get('window').width / 4);
 
@@ -73,7 +72,7 @@ const StartGameScreen = props => {
 
   return options
   ?
-  <Settings hide={() => setOptions(false)} />
+  <Settings back={() => setOptions(false)} />
   : (
     <ScrollView bounces={false} >
       <View>

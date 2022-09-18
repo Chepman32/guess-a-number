@@ -9,6 +9,7 @@ import AppLoading from 'expo-app-loading';
 import { init } from './Localization';
 import SplashScreen from './components/SplashScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Settings } from './Settings';
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -51,7 +52,12 @@ export default function App() {
   let content = <SafeAreaProvider>
     <SplashScreen onStartGame={startGameHandler} 
   setText={(value) => setText(value)}
-  setImg={(value) => setImg(value)} />
+  setImg={(value) => setImg(value)}
+  back={() => {
+    setUserNumber(0)
+    setGuessRounds(false)
+  }}
+  />
   </SafeAreaProvider>
 
   if (userNumber && guessRounds <= 0) {

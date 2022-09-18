@@ -7,7 +7,7 @@ import StartGameScreen from '../screens/StartGameScreen';
 
 const BGColor = "#f7287b"
 
-export default function SplashScreen({onStartGame, setText, setImg}) {
+export default function SplashScreen({onStartGame, setText, setImg, back}) {
     init()
     // SafeArea Value...
     const edges = useSafeAreaInsets();
@@ -28,7 +28,6 @@ export default function SplashScreen({onStartGame, setText, setImg}) {
 
     // Animation Done....
     useEffect(() => {
-
         // Starting Animation after 500ms....
         setTimeout(() => {
 
@@ -147,9 +146,11 @@ export default function SplashScreen({onStartGame, setText, setImg}) {
                 ]
             }}>
 
-                <StartGameScreen onStartGame={onStartGame} 
+                <StartGameScreen onStartGame={onStartGame}
   setText={(value) => setText(value)}
-  setImg={(value) => setImg(value)} />
+  setImg={(value) => setImg(value)}
+  back={back}
+  />
 
             </Animated.View>
 
