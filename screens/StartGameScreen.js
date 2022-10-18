@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   StyleSheet,
@@ -10,6 +10,7 @@ import {
   KeyboardAvoidingView,
   TouchableOpacity
 } from 'react-native';
+import CyberButton from 'react-native-cyberpunk-button';
 
 import Card from '../components/Card';
 import TitleText from '../components/TitleText';
@@ -32,8 +33,7 @@ const StartGameScreen = props => {
     const updateLayout = () => {
       setButtonWidth(Dimensions.get('window').width / 4);
     };
-  
-    Dimensions.addEventListener('change', updateLayout);
+  Dimensions.addEventListener('change', updateLayout);
     return () => {
       Dimensions.removeEventListener('change', updateLayout);
     };
@@ -47,6 +47,8 @@ const StartGameScreen = props => {
   useEffect(()=> {
     init()
   })
+
+  const btnRef = useRef();
 
   let confirmedOutput;
 
@@ -84,8 +86,20 @@ const StartGameScreen = props => {
         >
           <View style={styles.screen}>
             <TitleText style={styles.title}>{IMLocalized("Start a New Game!")} </TitleText>
-
-            {confirmedOutput}
+            <TouchableOpacity onPress={() => {
+              setTimeout(() => {
+                props.onStartGame(currentQuestion ? currentQuestion.answer : "")
+              }, 1000)
+              btnRef.current.animate()
+            }}
+            glitchDuration={1000}
+            >
+          <CyberButton
+            ref={btnRef}
+            disableAutoAnimation
+            label={IMLocalized("START GAME")}
+          />
+        </TouchableOpacity>
           </View>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
